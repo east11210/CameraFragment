@@ -250,8 +250,9 @@ public final class CameraHelper {
                 return size;
 
             double ratio = (double) size.getHeight() / size.getWidth();
+            double tolerance = Math.abs(ratio - targetRatio);
 
-            if (Math.abs(ratio - targetRatio) < MIN_TOLERANCE) MIN_TOLERANCE = ratio;
+            if (tolerance < MIN_TOLERANCE) MIN_TOLERANCE = tolerance;
             else continue;
 
             if (Math.abs(size.getHeight() - targetHeight) < minDiff) {
@@ -324,8 +325,9 @@ public final class CameraHelper {
 //                return size;
 
             double ratio = (double) size.getHeight() / size.getWidth();
+            double tolerance = Math.abs(ratio - targetRatio);
 
-            if (Math.abs(ratio - targetRatio) < MIN_TOLERANCE) MIN_TOLERANCE = ratio;
+            if (tolerance < MIN_TOLERANCE) MIN_TOLERANCE = tolerance;
             else continue;
 
             if (Math.abs(size.getHeight() - targetHeight) < minDiff) {
